@@ -1,0 +1,196 @@
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+.App-header {
+  flex: 0 0 60px;
+  padding: 20px;
+  color: #000;
+  background-color: #fff;
+  display: flex;
+  border: 1px solid #e3e3e3;
+  min-height: 0px;
+}
+
+.App-content {
+  flex: 1 1 auto;
+  min-height: 0px;
+  display: flex;
+
+}
+
+.App-footer {
+  min-height: 0px;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+.App-logo {
+  min-height: 0px;
+  max-height: 100%;
+  max-width: 100%;
+  flex: 0 0 200px;
+}
+
+.App-content {
+  min-height: 300px;
+  padding: 20px;
+}
+
+.App-nav {
+  margin-left: auto;
+  display: flex;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+/* Nav */
+ul.nav {
+  display: flex;
+  align-items: center;
+}
+
+ul.nav a {
+  text-decoration: none;
+}
+
+ul.nav li {
+  padding: 2rem;
+  display: inline-block;
+}
+
+/* Filter */
+
+.Gcode-filter {
+  display: flex;
+  align-items: flex-start;
+}
+
+ul.filter {
+  border: 1px solid #e3e3e3;
+  padding: 10px;
+}
+
+ul.filter .heading {
+  font-weight: 700;
+  border-bottom: 1px solid #e3e3e3;
+
+}
+
+ul.filter li {
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+ul.filter .machine_name {
+  margin-left: 1em;
+}
+
+
+/* Gcode List */
+
+.Gcode-list {
+  display: flex;
+  flex: 1;
+}
+
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+.gcodes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gcode {
+  flex: 1 1 calc(33% - 40px);
+  margin: 0px 20px 20px 20px;
+}
+
+.gcode img {
+  max-width: 100%;
+  transition: all 0.3s;
+}
+
+.gcode-image {
+  overflow: hidden;
+}
+
+.gcode-image:hover img {
+  transform: scale(1.1);
+}
+
+/* radio_box */
+.check_box {
+  width: 26px;
+  height: 26px;
+  background: white;
+  border: 2px solid #85cd37;
+  position: relative;
+}
+
+.check_box label {
+  cursor: pointer;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: -2px;
+  top: -2px;
+}
+
+.check_box label:after {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: #85cd37;
+}
+
+.check_box label:hover::after {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  opacity: 0.3;
+}
+
+.check_box input[type=checkbox]:checked + label:after {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+
+/* media query */
+@media (max-width: 1200px) {
+  .gcode {
+    flex: 1 1 calc(50% - 40px);
+  }
+  .Gcode-filter {
+    display: flex;
+  }
+}
+
+@media (max-width: 667px) {
+  .gcode {
+    flex: 1 1 100%;
+  }
+  .Gcode-filter {
+    display: none;
+  }
+}
+
+.green {
+  background-color: #85cd37;
+}
