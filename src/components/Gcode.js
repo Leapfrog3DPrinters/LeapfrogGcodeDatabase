@@ -6,10 +6,12 @@ class Gcode extends React.Component {
   	const { details, index } = this.props;
     return (
       <li className='gcode'>
-      	<Link to={`/gcode/${index}`}>
+      	<Link to={index}>
 	      	<div className="gcode-image">
-	      		<img src={details.image} alt='Ja' />
-	      		<span>{details.name}</span>
+	      		<img src={details.image} alt='Gcode Preview' />
+	      		<div className="gcode-info">
+	      		{details.name}<br/>
+	      		</div>
 	      	</div>
       	</Link>
       </li>

@@ -15,7 +15,7 @@ class Header extends React.Component {
                 <ul className="nav">
                     <li><Link to="/">DATABASE</Link></li>
                     <li><Link to="/about">ABOUT</Link></li>
-                    <li><Link to="/login">LOGIN</Link></li>
+                    <li><Link to="/account">{!this.props.user.loggedIn ? 'LOGIN' : 'ACCOUNT'}</Link></li>
                 </ul>
             </div>
         </div>

@@ -125,10 +125,48 @@ input[type=checkbox] {
 
 .gcode-image {
   overflow: hidden;
+  position: relative;
 }
 
 .gcode-image:hover img {
   transform: scale(1.1);
+}
+
+.gcode-image .gcode-info {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  color: #fff;
+  font-size: 1.2em;
+  // text-shadow: 1px 1px  #000;
+}
+
+/* Account */
+
+.App-login{
+  width:100%;
+}
+
+.login-form .login-register {
+  transition: all 0.4s ease;
+  flex-basis: 100%;
+  font-size: 1.2em;
+}
+
+.login-register:hover {
+  color: #85cd37;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-form {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.login-form > * {
+  margin: 10px;
+  flex: 1 1 40%;
 }
 
 /* radio_box */

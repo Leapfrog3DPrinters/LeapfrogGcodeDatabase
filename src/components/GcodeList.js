@@ -12,7 +12,7 @@ class GcodeList extends React.Component {
         	{
         	  Object
         	    .keys(this.props.gcodes)
-        	    .map(key => <Gcode key={key} index={key} details={this.props.gcodes[key]}/>)
+        	    .map(key => <Gcode key={key} index={`/gcode/${key}`} details={this.props.gcodes[key]}/>)
         	}
         	</ul>
         </div>
