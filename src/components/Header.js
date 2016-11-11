@@ -16,6 +16,9 @@ class Header extends React.Component {
                     <li><Link to="/">DATABASE</Link></li>
                     <li><Link to="/about">ABOUT</Link></li>
                     <li><Link to="/account">{!this.props.user.loggedIn ? 'LOGIN' : 'ACCOUNT'}</Link></li>
+                    {this.props.user.loggedIn ? 
+                    <li><Link to="/upload"><button>UPLOAD</button></Link></li>
+                    : null}
                 </ul>
             </div>
         </div>

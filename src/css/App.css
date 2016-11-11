@@ -61,6 +61,8 @@ ul.nav {
 
 ul.nav a {
   text-decoration: none;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 900;
 }
 
 ul.nav li {
@@ -118,7 +120,7 @@ input[type=checkbox] {
   margin: 0px 20px 20px 20px;
 }
 
-.gcode img {
+.gcode-image img {
   max-width: 100%;
   transition: all 0.3s;
 }
@@ -139,6 +141,82 @@ input[type=checkbox] {
   color: #fff;
   font-size: 1.2em;
   // text-shadow: 1px 1px  #000;
+}
+
+/* Upload */
+
+.App-upload {
+  display: flex;
+  align-items: flex-start;
+}
+
+.upload-code,
+.upload-data {
+  flex: 1 1 10%;
+}
+
+.App-upload label, 
+.App-upload input[type=text],
+.App-upload input[type=number] {
+  font-size: 1.5em;
+  outline: none;
+  padding: 15px 32px;
+  border: none;
+}
+
+.App-upload label {
+  border-right: 1px solid black;
+  flex-basis: 150px;
+}
+
+.styled-select {
+  overflow: hidden;
+}
+
+.styled-select select {
+  padding: 15px 32px;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  font-size: 1.5em;
+  outline: none;
+  appearance:none ;
+}
+
+.upload-info {
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.upload-item {
+  display: flex;
+  flex: 1 1 100%;
+  border:1px solid #000;
+  border-top: none;
+}
+
+.upload-item:first-child {
+  border-top:1px solid #000;
+}
+
+/*
+.upload-item.upload-material {
+  flex-basis: calc(50% - 2px);
+}*/
+
+.upload-item .upload-print-time {
+  max-width: 5em;
+  border-left: 1px solid black;
+}
+
+.upload-item > * {
+  flex:1 0 auto;
+}
+
+
+.upload-item label {
+  max-width: 150px;
+  flex-shrink: 0;
 }
 
 /* Account */

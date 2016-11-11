@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Match, Miss } from 'react-router'; 
+import { Match, Miss, Redirect } from 'react-router'; 
 import { db } from 'baqend';
 
 import '../css/App.css';
@@ -11,6 +11,7 @@ import NotFound from './NotFound';
 import Footer from './Footer';
 import About from './About';
 import Account from './Account';
+import Upload from './Upload';
 
 class App extends Component {
   constructor() {
@@ -35,7 +36,7 @@ class App extends Component {
         user.loggedIn = true;
         user.username = db.User.username;
       }
-      // Get gcode info
+      // Get gcode initial gcode-info
       db.Gcode
         .find()
         .resultList(result => {
@@ -99,6 +100,7 @@ class App extends Component {
           <Match pattern="/gcode/:gcodeId" render={(defaultProps) => <GcodeSingle gcodes={this.state.gcodes} {...defaultProps}/>} />
           <Match pattern="/account" render={(defaultProps) => <Account user={this.state.user} loginBaqend={this.loginBaqend} {...defaultProps}/>} />
           <Match pattern="/about" component={ About } />
+          <MatchWhenAuthorized user={this.state.user} pattern="/upload" component={ Upload } />
           <Miss component={ NotFound } />
         </div>
         <Footer />
@@ -106,6 +108,18 @@ class App extends Component {
     );
   }
 }
+
+const MatchWhenAuthorized = ({ component: Component, user, ...rest }) => (
+  <Match {...rest} render={props => (
+     user.loggedIn ? (
+      <Component {...props}/>
+    ) : (
+      <Redirect to={{
+        pathname: '/account'
+      }}/>
+    )
+  )}/>
+)
 
 App.contextTypes = {
   router: React.PropTypes.object

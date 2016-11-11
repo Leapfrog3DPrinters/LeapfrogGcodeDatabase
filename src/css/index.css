@@ -1,13 +1,17 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 a {
 	color: inherit;
 }
 
+h1 {
+	font-family: 'Catamaran', sans-serif;
+	font-weight: 900;
+}
 button {
 	background-color: #85cd37;
 	border: none;
@@ -17,10 +21,12 @@ button {
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 1.5em;
+	font-size: 1em;
 	cursor: pointer;
 	transition: all 0.4s ease;
 	outline: none;
+	font-family: 'Catamaran', sans-serif;
+	font-weight: 900;
 }
 
 button:hover {
@@ -28,7 +34,8 @@ button:hover {
 }
 
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=number] {
 	font-size: 1.5em;
 	outline: none;
 	padding: 15px 32px;
