@@ -148,17 +148,40 @@ input[type=checkbox] {
 .App-upload {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.upload-code,
+.upload-info,
 .upload-data {
-  flex: 1 1 10%;
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.upload-info {
+  flex-basis: 50%;
+}
+
+.upload-data {
+  min-width: 35%;
+  border: 1px solid #000;
+  border-left: none;
+}
+
+.upload-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.upload-image {
+  flex: 1;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .App-upload label, 
 .App-upload input[type=text],
 .App-upload input[type=number] {
-  font-size: 1.5em;
+  font-size: 1em;
   outline: none;
   padding: 15px 32px;
   border: none;
@@ -178,7 +201,7 @@ input[type=checkbox] {
   width: 100%;
   border: none;
   box-shadow: none;
-  font-size: 1.5em;
+  font-size: 1em;
   outline: none;
   appearance:none ;
 }
@@ -304,6 +327,14 @@ input[type=checkbox] {
   }
   .Gcode-filter {
     display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .upload-data{
+    border-top: none;
+    border-left: 1px solid #000;
+    min-height: 50px;
   }
 }
 

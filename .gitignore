@@ -8,7 +8,6 @@ coverage
 
 # production
 build
-www
 
 # misc
 .DS_Store
