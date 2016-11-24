@@ -39,17 +39,9 @@ class App extends Component {
       // Get gcode initial gcode-info
       db.Gcode
         .find()
-        .resultList(result => {
+        .resultList({depth: 1}, (result) => {
           result.forEach(gcode => {
-            const clean_id = gcode.id.replace('/db/Gcode/', '')
-            gcodes[clean_id] = {
-              name: gcode.name,
-              image: gcode.image,
-              info: gcode.info,
-              upload_date: gcode.upload_date,
-              verified: gcode.verified,
-              print_time: gcode.print_time
-            }
+            gcodes[gcode.key] = gcode
           })
         this.setState({ gcodes, user });
         })

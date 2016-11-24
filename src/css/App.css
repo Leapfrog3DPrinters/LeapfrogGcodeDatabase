@@ -140,7 +140,7 @@ input[type=checkbox] {
   top: 1em;
   color: #fff;
   font-size: 1.2em;
-  // text-shadow: 1px 1px  #000;
+  text-shadow: 1px 1px 2px #000;
 }
 
 /* Upload */
@@ -240,6 +240,22 @@ input[type=checkbox] {
 .upload-item label {
   max-width: 150px;
   flex-shrink: 0;
+}
+
+button.print_mode_select {
+  border-radius: 0px;
+  font-size: 1em;
+  padding: 0px;
+  flex-basis: 0%;
+}
+
+button.print_mode_select.active {
+  color: #fff;
+  background-color: #000;
+}
+
+.error_border {
+  border: 2px solid red !important;
 }
 
 /* Account */
